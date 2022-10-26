@@ -18,9 +18,9 @@ class LoyaltyRule(models.Model):
 
     condition_type = fields.Selection([('and', 'AND'), ('or', 'OR')], 'Condition type', default='or', required=True)
     product_value_ids = fields.Many2many('product.attribute.value', 'loyalty_rule_product_attribute_value_rel',
-                                         'rule_id', 'value_id', 'Product values')
+                                         'rule_id', 'value_id', 'Product Attributes')
     brand_ids = fields.Many2many('product.brand', 'loyalty_rule_product_brand_rel', 'rule_id', 'brand_id', 'Brand')
-    family_ids = fields.Many2many('product.family', 'loyalty_rule_product_family_rel', 'rule_id', 'family_id', 'Brand')
+    family_ids = fields.Many2many('product.family', 'loyalty_rule_product_family_rel', 'rule_id', 'family_id', 'Families')
 
     def _get_valid_product_domain(self):
         self.ensure_one()

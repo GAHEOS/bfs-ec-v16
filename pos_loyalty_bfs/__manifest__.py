@@ -10,7 +10,7 @@
 
 {
     'name': 'PoS Loyalty BFS Customization',
-    'version': '16.0.1.6',
+    'version': '16.0.1.7',
     'depends': [
         'pos_loyalty',
         'product_brand',
@@ -21,6 +21,7 @@
     'category': 'Sales/Point of Sale',
     'website': "https://www.gaheos.com",
     'data': [
+        'views/promo_views.xml',
     ],
     'assets': {
         'point_of_sale.assets': [
