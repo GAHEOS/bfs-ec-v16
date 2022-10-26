@@ -1,9 +1,9 @@
 /** @odoo-module **/
 
-import {Order, Orderline, PosGlobalState} from 'point_of_sale.models';
+import {Order} from 'point_of_sale.models';
 import Registries from 'point_of_sale.Registries';
 
-const BFSOrderline = (Orderline) => class BFSOrderline extends Orderline {
+const PosLoyaltyOrder = (Order) => class PosLoyaltyOrder extends Order {
     _getSpecificDiscountableLines(reward) {
         const discountableLines = [];
         const applicableProducts = reward.all_discount_product_ids;
@@ -20,4 +20,4 @@ const BFSOrderline = (Orderline) => class BFSOrderline extends Orderline {
     }
 };
 
-Registries.Component.extend(Orderline, BFSOrderline);
+Registries.Component.extend(Order, PosLoyaltyOrder);
