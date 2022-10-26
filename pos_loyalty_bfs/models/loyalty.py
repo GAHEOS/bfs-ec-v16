@@ -38,4 +38,4 @@ class LoyaltyRule(models.Model):
             product_domain = operator([product_domain, [('product_family_id', 'in', self.family_ids.ids)]])
         if self.brand_ids:
             product_domain = operator([product_domain, [('product_brand_id', 'in', self.brand_ids.ids)]])
-        return operator.AND([domain, product_domain])
+        return expression.AND([domain, product_domain])
