@@ -2,8 +2,10 @@
 
 import {Order} from 'point_of_sale.models';
 import Registries from 'point_of_sale.Registries';
+import '@pos_loyalty/js/Loyalty'
 
 const PosLoyaltyOrder = (Order) => class PosLoyaltyOrder extends Order {
+    //@override
     _getSpecificDiscountableLines(reward) {
         const discountableLines = [];
         const applicableProducts = reward.all_discount_product_ids;
