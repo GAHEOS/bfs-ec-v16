@@ -24,17 +24,18 @@ class LoyaltyRule(models.Model):
 
     def _get_valid_product_domain(self):
         self.ensure_one()
+        domain = super(LoyaltyRule, self)._get_valid_product_domain()
         if self.condition_type == 'or':
             operator = expression.OR
         else:
             operator = expression.AND
-        domain = super(LoyaltyRule, self)._get_valid_product_domain()
+        product_domain = []
         if self.product_value_ids:
-            domain = operator([domain,
+            product_domain = operator([product_domain,
                                [('product_template_variant_value_ids.product_attribute_value_id', '=', v.id) for v in
                                 self.product_value_ids]])
         if self.family_ids:
-            domain = operator([domain, [('product_family_id', 'in', self.family_ids.ids)]])
+            product_domain = operator([product_domain, [('product_family_id', 'in', self.family_ids.ids)]])
         if self.brand_ids:
-            domain = operator([domain, [('product_brand_id', 'in', self.brand_ids.ids)]])
-        return domain
+            product_domain = operator([product_domain, [('product_brand_id', 'in', self.brand_ids.ids)]])
+        return operator.AND([domain, product_domain])
