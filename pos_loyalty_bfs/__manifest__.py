@@ -10,9 +10,11 @@
 
 {
     'name': 'PoS Loyalty BFS Customization',
-    'version': '16.0.1.5',
+    'version': '16.0.1.6',
     'depends': [
-        'pos_loyalty'
+        'pos_loyalty',
+        'product_brand',
+        'product_family',
     ],
     'author': 'GAHEOS S.A.',
     'description': 'PoS Loyalty BFS Customization',
