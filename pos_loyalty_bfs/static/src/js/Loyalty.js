@@ -1,10 +1,9 @@
-/** @odoo-module **/
+/** @odoo-module alias=pos_loyalty_bfs.models**/
 
-import {Order} from 'point_of_sale.models';
+import { Order } from 'point_of_sale.models';
 import Registries from 'point_of_sale.Registries';
-import '@pos_loyalty/js/Loyalty'
 
-const PosLoyaltyOrder = (Order) => class PosLoyaltyOrder extends Order {
+const BFSLoyaltyOrder = (Order) => class BFSLoyaltyOrder extends Order {
     //@override
     _getSpecificDiscountableLines(reward) {
         const discountableLines = [];
@@ -22,4 +21,4 @@ const PosLoyaltyOrder = (Order) => class PosLoyaltyOrder extends Order {
     }
 };
 
-Registries.Component.extend(Order, PosLoyaltyOrder);
+Registries.Model.extend(Order, BFSLoyaltyOrder);

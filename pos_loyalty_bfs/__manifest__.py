@@ -10,7 +10,7 @@
 
 {
     'name': 'PoS Loyalty BFS Customization',
-    'version': '16.0.1.4',
+    'version': '16.0.1.5',
     'depends': [
         'pos_loyalty'
     ],
