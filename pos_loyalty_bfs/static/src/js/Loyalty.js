@@ -1,11 +1,9 @@
-odoo.define('pos_loyalty_bfs.loyalty', function (require) {
-"use strict";
+/** @odoo-module **/
 
-var {PosGlobalState} = require('point_of_sale.models');
-const Registries = require('point_of_sale.Registries');
+import {Order, Orderline, PosGlobalState} from 'point_of_sale.models';
+import Registries from 'point_of_sale.Registries';
 
-
-const BFSLoyaltyGlobalState = (PosGlobalState) => class BFSLoyaltyGlobalState extends PosGlobalState {
+const BFSOrderline = (Orderline) => class BFSOrderline extends Orderline {
     _getSpecificDiscountableLines(reward) {
         const discountableLines = [];
         const applicableProducts = reward.all_discount_product_ids;
@@ -22,5 +20,4 @@ const BFSLoyaltyGlobalState = (PosGlobalState) => class BFSLoyaltyGlobalState ex
     }
 };
 
-Registries.Component.extend(PosGlobalState, BFSLoyaltyGlobalState);
-});
+Registries.Component.extend(Orderline, BFSOrderline);
