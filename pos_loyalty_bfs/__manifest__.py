@@ -9,18 +9,20 @@
 #######################################################################################
 
 {
-    'name': 'Family support for products',
-    'version': '0.1.0',
+    'name': 'PoS Loyalty BFS Customization',
+    'version': '16.0.1.0',
     'depends': [
-        'product'
+        'pos_loyalty'
     ],
     'author': 'GAHEOS S.A.',
-    'description': 'Family support for products',
-    'category': 'Sales/Sales',
+    'description': 'PoS Loyalty BFS Customization',
+    'category': 'Sales/Point of Sale',
     'website': "https://www.gaheos.com",
     'data': [
-        'security/ir.model.access.csv',
-        'views/product_views.xml',
     ],
+    'assets': {
+        'point_of_sale.assets': [
+            'pos_loyalty_bfs/static/src/js/Loyalty.js'
+        ]
+    }
 }
-

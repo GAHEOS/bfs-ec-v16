@@ -15,7 +15,7 @@
     'author': 'GAHEOS S.A.',
     'description': 'volume_module',
     'category': 'Specific Industry Applications',
-    'website': "http://www.odoo.ec",
+    'website': "https://www.gaheos.com",
     'data': [
         'data/data.xml',
 

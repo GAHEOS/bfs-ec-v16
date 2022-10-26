@@ -17,7 +17,7 @@
     'author': 'GAHEOS S.A.',
     'description': 'Brand support for products',
     'category': 'Sales/Sales',
-    'website': "http://www.odoo.ec",
+    'website': "https://www.gaheos.com",
     'data': [
         'security/ir.model.access.csv',
         'views/product_views.xml',
